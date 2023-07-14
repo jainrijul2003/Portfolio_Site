@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="checklist.png" rel="icon">
+    <style>
+        * {
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #33658A;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .formdesign {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .formdesign input {
+            width: 80%;
+            padding: 12px 20px;
+            border: 1px solid rgba(88, 205, 240, 0.92);
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+
+        }
+
+        .btn {
+            width: 81px;
+            height: 75px;
+            border-radius: 50%;
+            border: 1px solid black;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        span {
+            color: red;
+            font-weight: 700;
+        }
+
+        .query-box input {
+            width: 350px;
+            height: 55px;
+
+            border: 1px solid rgba(88, 205, 240, 0.92);
+            margin: 14px;
+            margin-top: 4px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: height 0.3s ease;
+
+            padding: 5px;
+        }
+
+        .query-box {
+
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .query-box :hover {
+            height: 100px;
+        }
+
+        h1 {
+            padding: 4px;
+            margin: 0;
+            width: 60%;
+            border-radius: 5px;
+        }
+
+        .pass {
+            width: 40%;
+        }
+
+        /* Styling for the dropdown menu */
+        .dropdown {
+            width: 100px;
+
+            position: relative;
+            display: inline-block;
+
+        }
+
+        button {
+            padding: 4px;
+            width: 130px;
+            height: 50px;
+            color: black;
+            display: flex;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            justify-content: space-between;
+            border: 2px solid rgba(88, 205, 240, 0.92);
+            border-radius: 0.5rem;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+
+        }
+
+        .dropdown:hover .options {
+            display: block;
+            background-color: lightblue;
+        }
+
+        .options {
+
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .options a {
+            min-height: 30px;
+            margin-left: 5px;
+            padding: 3px;
+            text-decoration: none;
+            color: black;
+            display: block;
+
+        }
+
+        .options a:hover {
+            background-color: rgb(22, 104, 145);
+        }
+
+
+
+
+        /* !!!!!  Styling for the dropdown menu !!!!!  */
+        .form {
+            display: flex;
+
+        }
+    </style>
+</head>
+<!--  -->
+
+<body bgcolor="#86BBD8">
+
+    <div class="container">
+        <h1>Submit your Information Here :</h1>
+
+
+        <form aciton=""  onsubmit="return validateForm()" method="POST">
+
+            <!-- left - side -->
+            <div class="left-side">
+                <div class="formdesign" id="name">
+                    Name : <br>
+                    <input type="text" name="name" placeholder="John" id="name"  required>
+                    <b><span class="formerror"></span></b>
+                </div>
+                <div class="formdesign" id="email">
+                    Email : <br>
+                    <input type="email" name="email" id="email" placeholder="email@example.com" required>
+                    <b><span class="formerror"></span></b>
+                </div>
+                <div class="formdesign" id="phone">
+                    Phone : <br>
+                    <input type="phone" name="phone" id="phone" placeholder="phone number" required>
+                    <b><span class="formerror"></span></b>
+                </div>
+
+            </div>
+
+            <!-- right - side  -->
+            <div class="right-side">
+
+                <!-- query box -->
+                <div class="query-box formdesign">
+                    Query : <br><textarea type="text" name="msg" id="query"></textarea>
+                </div>
+
+            </div>
+
+            <button class="btn" type="submit" >Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
